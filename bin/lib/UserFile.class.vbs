@@ -38,7 +38,6 @@ Class UserFile
     Dim File
     Set File = CreateObject("Scripting.FileSystemObject").OpenTextFile(Me.Path, 1 , true) ' 1 = ForReading
     If Err.Number = 0 Then
-      debug("OK")
       LoadTextContents(File)
     Else
       Error("ファイル " & Me.Path & "を開くことができません" &  Err.Description)
@@ -49,7 +48,6 @@ Class UserFile
 
   Private Sub LoadTextContents(FileObject)
     Dim line, Is1stLine, new_index
-    debug("LoadTextContents")
     ReDim m_contents(0)
     Is1stLine = True
     Do While FileObject.AtEndOfStream <> True
@@ -72,7 +70,6 @@ Class UserFile
       If Not CreateObject("Scripting.FileSystemObject").FileExists(Me.Mp3FileWithPath) Then
         Error("指定された音声ファイル(" & Me.Mp3FileWithPath & ")が存在しません")
       End If
-      debug("MP3 file is " & Me.Mp3FileWithPath)
     End If
   End Sub
 
