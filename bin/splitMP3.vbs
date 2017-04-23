@@ -161,6 +161,10 @@ Function Main_Exec()
 
 End Function
 
+
+' ======================================================================
+'   Main
+' ======================================================================
 Include GetLibPath() & "\UserFile.class.vbs"
 Include GetLibPath() & "\Mp3Element.class.vbs"
 Call Main_Exec
