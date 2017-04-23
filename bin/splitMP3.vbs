@@ -136,10 +136,10 @@ End Function
 '   Functions for Debug
 ' ======================================================================
 
-Function GetTestPath()
+Function GetSamplePath()
   ' テストディレクトリの取得
-  '     このVBSファイルから ../test の位置を想定
-  GetTestPath = CreateObject("Scripting.FileSystemObject").GetParentFolderName(GetModulePath()) & "\test"
+  '     このVBSファイルから ../sample の位置を想定
+  GetSamplePath = CreateObject("Scripting.FileSystemObject").GetParentFolderName(GetModulePath()) & "\sample"
 End Function
 
 Function debug(Message)
@@ -155,7 +155,7 @@ Function Main_Exec()
 
   ' Call InitErrorCheck()
   ' UserFile.Path = GetUserFilePath()
-  UserFile.Path = GetTestPath() & "\data.txt"
+  UserFile.Path = GetSamplePath() & "\entry.txt"
   UserFile.LoadSettings
   ConfirmSplit(UserFile)
 
